@@ -1,0 +1,143 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F7F8FA;
+}
+
+.sidebar {
+    background-color: #fff;
+    color: #000;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 15%;
+    overflow-y: auto;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#main-section{
+    max-height: 98vh;
+    overflow-y: auto;
+}
+
+/* Sticky header styles */
+.sidebar .d-flex {
+    background-color:#082b54; /* Change this to your desired background color */
+    color: #fff; /* Text color for the sticky header */
+    padding: 10px; /* Add some padding */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Keep it on top of other elements */
+}
+/* Initial scrollbar styles */
+.sidebar::-webkit-scrollbar {
+    width: 0px; /* Initial width */
+}
+
+/* Track */
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track background */
+}
+
+/* Handle */
+.sidebar::-webkit-scrollbar-thumb {
+    background: transparent; /* Transparent by default */
+    border-radius: 10px; /* Rounded handle */
+}
+
+/* Show scrollbar on hover */
+.sidebar:hover::-webkit-scrollbar {
+    width: 3px; /* Width when hovered */
+}
+
+/* Handle color when hovered */
+.sidebar:hover::-webkit-scrollbar-thumb {
+    background: #DAE2F3; /* Change handle color to blue on hover */
+}
+
+.sidebar .nav-link {
+    font-size: 14px;
+    color:#111;
+    padding: 0.7125rem 1.25rem;
+}
+
+.sidebar a {
+    color: #adb5bd;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #6673fd;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link.active {
+    color: #6673fd;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    min-height: 3.8rem;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.header .search-bar input {
+    background-color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.header .search-bar input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.header .profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.stat-icon {
+    font-size: 24px;
+}
+
+.sub-menu-items {
+    transition: all 0.4s ease-in-out; /* Smooth transition */
+    overflow: hidden; /* Hide overflow */
+    max-height: 0; 
+    opacity: 0;
+}
+
+.sub-menu-items.show {
+    max-height: 200px; /* Set max-height when expanded, adjust as needed */
+    opacity: 1;
+}
+@media (max-width: 992px) {
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        transition: left 0.3s;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .header {
+        padding-left: 50px;
+    }
+
+    .header .menu-toggle {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 992px) {
+    .header .menu-toggle {
+        display: none;
+    }
+}
